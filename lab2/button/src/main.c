@@ -30,7 +30,7 @@ void button1_pressed(const struct device *dev, struct gpio_callback *cb, uint32_
 
 void button2_pressed(const struct device *dev, struct gpio_callback *cb, uint32_t pins)
 {
-	int val = gpio_pin_get_dt(&button3);
+	int val = gpio_pin_get_dt(&button2);
 	printk("Button2 %i\n", val);
 }
 
