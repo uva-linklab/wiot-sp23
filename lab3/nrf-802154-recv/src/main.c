@@ -16,19 +16,12 @@
 
 static void pkt_hexdump(uint8_t *pkt, uint8_t length) {
   int i;
-  printk(" -> Packet content:");
-  for (i = 0; i < length;) {
-    int j;
-    printk("\t");
-
-	// groups every 10 bytes
-    for (j = 0; j < 10 && i < length; j++, i++) {
-      printk("%02x ", *pkt);
-      pkt++;
-    }
-    printk("");
-  }
-  printk("\n");
+  printk("Packet: ");
+	for (i=0; i<length; i++) {
+		printk("%02x ", *pkt);
+		pkt++;
+	}
+	printk("\n");
 }
 
 static int rf_setup(const struct device *dev)
