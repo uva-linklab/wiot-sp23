@@ -76,7 +76,7 @@ def on_message(client, userdata, message):
     # See if we can decode this payload.
     if group_number in decoders:
         try:
-            temperature = decoders[group_number](message.payload[1:])
+            temperature = decoders[group_number](remaining_payload)
         except:
             print("Failed to decode payload for Group {}".format(group_number))
             print("  payload: {}".format(remaining_payload))
